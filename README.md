@@ -4,6 +4,14 @@ A simple package consisting of lots of TWO COMMANDS -  `giverep` and `addrep` to
 #### Features 
 - `/ADDREP` - Allows Admins to Add Reputation to any online player. 
 - `/GIVEREP` - Allows players to Give Reputation to Each Other. (Both must be Online)
+
+#### Command Usage
+`/addrep [id] [crafting/dealer/atcrafting] [amount]`
+`/giverep [id] [crafting/dealer/atcrafting] [amount]`
+```crafting - Crafting Reputation
+dealer - Dealer Reputation 
+atcrafting - Attachment Crafting Reputation 
+```
 #### To keep number of resources lesser, I have merged this with existing Command Files. Please follow whats written in the Readme to ensure error-free setup. 
 
 ## SETUP / INSTRUCTIONS
