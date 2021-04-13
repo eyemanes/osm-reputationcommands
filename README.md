@@ -7,8 +7,10 @@ A simple package consisting of lots of TWO COMMANDS -  `giverep` and `addrep` to
 
 #### Command Usage
 `/addrep [id] [crafting/dealer/atcrafting] [amount]`
+
 `/giverep [id] [crafting/dealer/atcrafting] [amount]`
-```crafting - Crafting Reputation
+```
+crafting - Crafting Reputation
 dealer - Dealer Reputation 
 atcrafting - Attachment Crafting Reputation 
 ```
