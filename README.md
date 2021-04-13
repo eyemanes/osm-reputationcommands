@@ -1,6 +1,9 @@
 # QBUS x OSM | Reputation Management Commands | Dynamic System to transfer reputation bw players.
-Manage Crafting Rep, Dealer Rep, and Attachment Rep, with admin powers, as well as REP is now transferable from one player to other.
+A simple package consisting of lots of TWO COMMANDS -  `giverep` and `addrep` to make Reputation System a more interactable one, and increase RP by a bit. 
 
+#### Features 
+- `/ADDREP` - Allows Admins to Add Reputation to any online player. 
+- `/GIVEREP` - Allows players to Give Reputation to Each Other. (Both must be Online)
 #### To keep number of resources lesser, I have merged this with existing Command Files. Please follow whats written in the Readme to ensure error-free setup. 
 
 ## SETUP / INSTRUCTIONS
