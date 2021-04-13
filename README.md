@@ -1,7 +1,7 @@
 # QBUS x OSM | Reputation Management Commands | Dynamic System to transfer reputation bw players.
 A simple package consisting of lots of TWO COMMANDS -  `giverep` and `addrep` to make Reputation System a more interactable one, and increase RP by a bit. 
 
-Join my Discord Server for Support and Work : [DISCORD](https://discord.gg/bfPKqNhQPQ)
+## Join my Discord Server for Support and Work : [DISCORD](https://discord.gg/bfPKqNhQPQ)
 #### Features 
 - `/ADDREP` - Allows Admins to Add Reputation to any online player. 
 - `/GIVEREP` - Allows players to Give Reputation to Each Other. (Both must be Online)
