@@ -1,5 +1,9 @@
--- For admins to add Reputation to anyone
+-- BY OSMIUM #0001 -- 
+-- TO BE PASTED IN [CORE FOLDER]/SERVER/COMMANDS.LUA --
+-- MY DISCORD : https://discord.gg/bfPKqNhQPQ --
 
+
+-- For admins to add Reputation to anyone
 QBCore.Commands.Add("addrep", "Add Reputation to a Player", {{name="id", help="ID of player"}, {name="type", help="dealer/crafting/atcrafting"}, {name="amount", help="Amount of Rep"}}, false, function(source, args)
 
         
