@@ -44,7 +44,7 @@ QBCore.Commands.Add("deleterep", "Delete all Reputation to a Player", {{name="id
     local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
 
    if Player ~= nil then 
-    if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
+    if args[1] ~= nil and args[2] ~= nil then
         local x = tonumber(args[1])
         local y = args[2]
 
@@ -74,7 +74,7 @@ QBCore.Commands.Add("checkrep", "Check Reputation of a Player", {{name="id", hel
     local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
 
    if Player ~= nil then 
-    if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
+    if args[1] ~= nil and args[2] ~= nil then
         local x = tonumber(args[1])
         local y = args[2]
 
@@ -97,6 +97,27 @@ QBCore.Commands.Add("checkrep", "Check Reputation of a Player", {{name="id", hel
    TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Player not Online")
 end
 end, "admin") -- change allowed role here 
+
+-- CHECK PLAYER OWN REPS (ALL IN ONE MESSAGE)
+QBCore.Commands.Add("myrep", "Check Your Reputations", {}, false, function(source, args)
+
+local Player = QBCore.Functions.GetPlayer(source)
+
+   if Player ~= nil then 
+    
+        local x = Player.PlayerData.metadata["dealerrep"] 
+        local y = Player.PlayerData.metadata["craftingrep"] 
+        local z = Player.PlayerData.metadata["attachmentcraftingrep"] 
+
+        TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Your Current Dealer-Rep '..x..'')
+        TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Your Current Crafting-Rep '..y..'')
+        TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Your Current Attachment-Rep '..z..'')
+
+  else 
+
+   TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Player not Online")
+end
+end)
 
 -- GIVE YOUR REPUTATION TO OTHER PLAYERS
 
