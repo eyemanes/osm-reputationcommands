@@ -38,6 +38,66 @@ QBCore.Commands.Add("addrep", "Add Reputation to a Player", {{name="id", help="I
 end
 end, "admin") -- change allowed role here 
 
+-- DELETE PLAYER's ENTIRE REP 
+QBCore.Commands.Add("deleterep", "Delete all Reputation to a Player", {{name="id", help="ID of player"}, {name="type", help="dealer/crafting/atcrafting"}}, false, function(source, args)
+
+    local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+
+   if Player ~= nil then 
+    if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
+        local x = tonumber(args[1])
+        local y = args[2]
+
+        if y == "dealer" then
+            Player.Functions.SetMetaData("dealerrep", 0)
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Cleared ALL Dealer-Rep of ID '..x..'')
+        end
+        if y == "crafting" then
+            Player.Functions.SetMetaData("craftingrep", 0)
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Cleared ALL Crafting-Rep of ID '..x..'')
+        end
+        if y == "atcrafting" then
+            Player.Functions.SetMetaData("attachmentcraftingrep", 0)
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Cleared ALL At-Rep of ID '..x..'')
+        end
+    else
+        TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Not every argument has been entered.")
+    end
+  else 
+   TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Player not Online")
+end
+end, "admin") -- change allowed role here 
+
+-- CHECK REP OF ANY ONLINE PLAYER (ADMIN ONLY)
+QBCore.Commands.Add("checkrep", "Check Reputation of a Player", {{name="id", help="ID of player"}, {name="type", help="dealer/crafting/atcrafting"}}, false, function(source, args)
+
+    local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+
+   if Player ~= nil then 
+    if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
+        local x = tonumber(args[1])
+        local y = args[2]
+
+        if y == "dealer" then
+            local newrep = Player.PlayerData.metadata["dealerrep"]
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Current Dealer-Rep of ID '..x..' is '..newrep..'')
+        end
+        if y == "crafting" then
+            local newrep = Player.PlayerData.metadata["craftingrep"] 
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Current Crafting-Rep of ID '..x..' is '..newrep..'')
+        end
+        if y == "atcrafting" then
+            local newrep  = Player.PlayerData.metadata["attachmentcraftingrep"] 
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", 'Current At-Rep of ID '..x..' is '..newrep..'')
+        end
+    else
+        TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Not every argument has been entered.")
+    end
+  else 
+   TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Player not Online")
+end
+end, "admin") -- change allowed role here 
+
 -- GIVE YOUR REPUTATION TO OTHER PLAYERS
 
 QBCore.Commands.Add("giverep", "Add Reputation to a Player", {{name="id", help="ID of player"}, {name="type", help="dealer/crafting/atcrafting"}, {name="amount", help="Amount of Rep"}}, false, function(source, args)
