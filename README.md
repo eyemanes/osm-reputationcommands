@@ -5,11 +5,20 @@ A simple package consisting of lots of TWO COMMANDS -  `giverep` and `addrep` to
 #### Features 
 - `/ADDREP` - Allows Admins to Add Reputation to any online player. 
 - `/GIVEREP` - Allows players to Give Reputation to Each Other. (Both must be Online)
+- `/CHECKREP` - Allows ADMINS to Check Reputation of Any Online Player 
+- `/DELETEREP` - Allows ADMINS to Set Rep to ZERO of Any Online Player
+- `/MYREP` - Any Player can Check all his Reputations [crafting/dealer/atcrafting]  
 
 #### Command Usage
 `/addrep [id] [crafting/dealer/atcrafting] [amount]`
 
 `/giverep [id] [crafting/dealer/atcrafting] [amount]`
+
+`/checkrep [id] [crafting/dealer/atcrafting]`
+
+`/deleterep [id] [crafting/dealer/atcrafting]`
+
+`/myrep` 
 ```
 crafting - Crafting Reputation
 dealer - Dealer Reputation 
