@@ -127,7 +127,7 @@ QBCore.Commands.Add("giverep", "Add Reputation to a Player", {{name="id", help="
         local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
 
        if Player ~= nil and Self ~= nil then 
-        if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
+        if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil and args[3] > 0 then
             local x = tonumber(args[1])
             local y = args[2]
             local z = tonumber(args[3])
