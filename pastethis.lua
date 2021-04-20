@@ -127,11 +127,11 @@ QBCore.Commands.Add("giverep", "Add Reputation to a Player", {{name="id", help="
         local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
 
        if Player ~= nil and Self ~= nil then 
-        if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil and args[3] > 0 then
+        if args[1] ~= nil and args[2] ~= nil and args[3] ~= nil then
             local x = tonumber(args[1])
             local y = args[2]
             local z = tonumber(args[3])
-
+        if z > 0 then  
             if y == "dealer" and Self.PlayerData.metadata["dealerrep"] >= z then
                 local selfrep = Self.PlayerData.metadata["dealerrep"] - z
               local newrep = Player.PlayerData.metadata["dealerrep"] + z
@@ -153,6 +153,9 @@ QBCore.Commands.Add("giverep", "Add Reputation to a Player", {{name="id", help="
                 Self.Functions.SetMetaData("attachmentcraftingrep", selfrep)
                 TriggerClientEvent('chatMessage', Player, "SYSTEM", "error", "You received some ATTACHMENT CRAFTING REP")
             end
+        else
+            TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Negative Values not Allowed.")
+        end
         else
             TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "Not every argument has been entered.")
         end
